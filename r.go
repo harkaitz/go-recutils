@@ -15,6 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+// GNU recutils'es recfiles parser on pure Go
 package recfile
 
 import (
@@ -25,10 +26,14 @@ import (
 	"strings"
 )
 
+var KeyValRe = regexp.MustCompile(`([a-zA-Z%][a-zA-Z0-9_]*):\s*(.*)$`)
+
 type Reader struct {
 	scanner *bufio.Scanner
 }
 
+// Create Reader for iterating through the records. It uses
+// bufio.Scanner, so can read more than currently parsed records take.
 func NewReader(r io.Reader) *Reader {
 	return &Reader{bufio.NewScanner(r)}
 }
@@ -38,8 +43,8 @@ type Field struct {
 	Value string
 }
 
-var KeyValRe = regexp.MustCompile(`([a-zA-Z%][a-zA-Z0-9_]*):\s*(.*)$`)
-
+// Get next record. Each record is just a collection of fields. io.EOF
+// is returned if there is nothing to read more.
 func (r *Reader) Next() ([]Field, error) {
 	fields := make([]Field, 0, 1)
 	var text string

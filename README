@@ -1,1 +1,7 @@
-GNU recutils'es recfile parser on pure Go.
+GNU recutils'es recfile parser on pure Go. recfiles are human-editable,
+plaintext databases. This library allows you to read records and their
+fields from it. Look for cmd/gorecsel as an example usage.
+
+* iterate through the records and their fields
+* ignore comments
+* support continuation lines (\$) and multilines (^+)
