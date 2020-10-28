@@ -38,11 +38,6 @@ func NewReader(r io.Reader) *Reader {
 	return &Reader{bufio.NewScanner(r)}
 }
 
-type Field struct {
-	Name  string
-	Value string
-}
-
 // Get next record. Each record is just a collection of fields. io.EOF
 // is returned if there is nothing to read more.
 func (r *Reader) Next() ([]Field, error) {
