@@ -123,3 +123,16 @@ func (r *Reader) Next() ([]Field, error) {
 	}
 	return fields, nil
 }
+
+// Same as Next(), but creates map from the fields.
+func (r *Reader) NextMap() (map[string]string, error) {
+	fields, err := r.Next()
+	if err != nil {
+		return nil, err
+	}
+	m := make(map[string]string, len(fields))
+	for _, f := range fields {
+		m[f.Name] = f.Value
+	}
+	return m, nil
+}
