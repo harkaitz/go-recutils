@@ -124,7 +124,7 @@ func (r *Reader) Next() ([]Field, error) {
 	return fields, nil
 }
 
-// Same as Next(), but creates map from the fields.
+// Same as Next(), but with unique keys and last value.
 func (r *Reader) NextMap() (map[string]string, error) {
 	fields, err := r.Next()
 	if err != nil {
@@ -133,6 +133,19 @@ func (r *Reader) NextMap() (map[string]string, error) {
 	m := make(map[string]string, len(fields))
 	for _, f := range fields {
 		m[f.Name] = f.Value
+	}
+	return m, nil
+}
+
+// Same as Next(), but with unique keys and slices of values.
+func (r *Reader) NextMapWithSlice() (map[string][]string, error) {
+	fields, err := r.Next()
+	if err != nil {
+		return nil, err
+	}
+	m := make(map[string][]string)
+	for _, f := range fields {
+		m[f.Name] = append(m[f.Name], f.Value)
 	}
 	return m, nil
 }
