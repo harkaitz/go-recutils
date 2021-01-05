@@ -1,6 +1,6 @@
 /*
 recfile -- GNU recutils'es recfiles parser on pure Go
-Copyright (C) 2020 Sergey Matveev <stargrave@stargrave.org>
+Copyright (C) 2020-2021 Sergey Matveev <stargrave@stargrave.org>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
