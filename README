@@ -6,3 +6,5 @@ an example usage.
 * iterate through the records and their fields
 * ignore comments
 * support continuation lines (\$) and multilines (^+)
+
+It is free software: see the file COPYING for copying conditions.
