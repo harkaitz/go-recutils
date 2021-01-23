@@ -31,7 +31,7 @@ func NewWriter(w io.StringWriter) *Writer {
 	return &Writer{w}
 }
 
-func (w *Writer) RecordStart(fs ...Field) (written int, err error) {
+func (w *Writer) RecordStart() (written int, err error) {
 	return w.w.WriteString("\n")
 }
 
