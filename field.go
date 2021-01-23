@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// GNU recutils'es recfiles parser on pure Go
+// GNU recutils'es recfiles parser/writer on pure Go
 package recfile
 
 type Field struct {
