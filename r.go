@@ -21,11 +21,8 @@ import (
 	"bufio"
 	"errors"
 	"io"
-	"regexp"
 	"strings"
 )
-
-var KeyValRe = regexp.MustCompile(`([a-zA-Z%][a-zA-Z0-9_]*):\s*(.*)$`)
 
 type Reader struct {
 	scanner *bufio.Scanner
@@ -35,6 +32,31 @@ type Reader struct {
 // bufio.Scanner, so can read more than currently parsed records take.
 func NewReader(r io.Reader) *Reader {
 	return &Reader{bufio.NewScanner(r)}
+}
+
+func getKeyValue(text string) (string, string) {
+	cols := strings.SplitN(text, ":", 2)
+	if len(cols) != 2 {
+		return "", ""
+	}
+	k := cols[0]
+	if len(k) == 0 {
+		return "", ""
+	}
+	if !((k[0] == '%') ||
+		('a' <= k[0] && k[0] <= 'z') ||
+		('A' <= k[0] && k[0] <= 'Z')) {
+		return "", ""
+	}
+	for _, c := range k {
+		if !((c == '_') ||
+			('a' <= c && c <= 'z') ||
+			('A' <= c && c <= 'Z') ||
+			('0' <= c && c <= '9')) {
+			return "", ""
+		}
+	}
+	return k, strings.TrimPrefix(cols[1], " ")
 }
 
 // Get next record. Each record is just a collection of fields. io.EOF
@@ -94,12 +116,10 @@ func (r *Reader) Next() ([]Field, error) {
 			break
 		}
 
-		matches := KeyValRe.FindStringSubmatch(text)
-		if len(matches) == 0 {
+		name, line = getKeyValue(text)
+		if name == "" {
 			return fields, errors.New("invalid field format")
 		}
-		name = matches[1]
-		line = matches[2]
 
 		if len(line) > 0 && line[len(line)-1] == '\\' {
 			continuation = true
