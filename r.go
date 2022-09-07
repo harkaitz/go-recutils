@@ -48,7 +48,7 @@ func getKeyValue(text string) (string, string) {
 		('A' <= k[0] && k[0] <= 'Z')) {
 		return "", ""
 	}
-	for _, c := range k {
+	for _, c := range k[1:] {
 		if !((c == '_') ||
 			('a' <= c && c <= 'z') ||
 			('A' <= c && c <= 'Z') ||
