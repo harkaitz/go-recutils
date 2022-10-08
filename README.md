@@ -1,17 +1,18 @@
 # GO-RECUTILS
 
-## Reason for the fork.
+## Reasons for the fork.
 
-This is a fork of `http://www.git.cypherpunks.ru/?p=gorecfile.git;a=summary` repository.
+This is a fork from [cypherpunks.ru](http://www.git.cypherpunks.ru/?p=gorecfile.git;a=summary)
 
-I had issues downloading the code from `www.git.cypherpunks.ru` safely (2022-10-XX):
+I had issues downloading the code from safely (2022-10-XX):
 
-1.- I was getting an invalid certificate (2022).
-2.- The connection is slow and closes (even ignoring all security practices).
+- I was getting an invalid certificate (2022).
+- The connection is slow and closes (even ignoring all security practices).
 
-The package name is `recfile`.
+I will keek the package name the same `recfile`. This way you only need
+to change the "import" statement to use this fork.
 
-## Updates from www.git.cypherpunks.ru:
+## Updates from cypherpunks.ru:
 
 - 2022-10-08 : Initial fork.
 
