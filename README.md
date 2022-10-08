@@ -4,7 +4,7 @@
 
 This is a fork from [cypherpunks.ru](http://www.git.cypherpunks.ru/?p=gorecfile.git;a=summary)
 
-I had issues downloading the code from safely (2022-10-XX):
+I had issues downloading the code safely (2022-10-XX):
 
 - I was getting an invalid certificate (2022).
 - The connection is slow and closes (even ignoring all security practices).
