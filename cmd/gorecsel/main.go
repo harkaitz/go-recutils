@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"go.cypherpunks.ru/recfile"
+	"github.com/harkaitz/go-recutils"
 )
 
 func main() {
