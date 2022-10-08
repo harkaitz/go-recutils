@@ -13,14 +13,14 @@ It is free software: see the file COPYING for copying conditions.
 
 ## Reasons for the fork.
 
-This is a fork from [cypherpunks.ru](http://www.git.cypherpunks.ru/?p=gorecfile.git;a=summary)
+This repository is a forked from [cypherpunks.ru](http://www.git.cypherpunks.ru/?p=gorecfile.git;a=summary) in 2022-10-08.
 
 I had issues downloading the code safely (2022-10-XX):
 
 - I was getting an invalid certificate (2022).
 - The connection was slow and closed unexpectedly.
 
-I will keek the package name the same `recfile`. This way you only need
+I will keep the package name the same `recfile`. This way you only need
 to change the "import" statement to use this fork.
 
 ## Updates from cypherpunks.ru:
