@@ -13,7 +13,7 @@ It is free software: see the file COPYING for copying conditions.
 
 ## Reasons for the fork.
 
-This repository is a forked from [cypherpunks.ru](http://www.git.cypherpunks.ru/?p=gorecfile.git;a=summary) in 2022-10-08.
+This repository was forked from [cypherpunks.ru](http://www.git.cypherpunks.ru/?p=gorecfile.git;a=summary) in 2022-10-08.
 
 I had issues downloading the code safely (2022-10-XX):
 
