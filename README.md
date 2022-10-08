@@ -7,7 +7,7 @@ This is a fork from [cypherpunks.ru](http://www.git.cypherpunks.ru/?p=gorecfile.
 I had issues downloading the code safely (2022-10-XX):
 
 - I was getting an invalid certificate (2022).
-- The connection is slow and closes (even ignoring all security practices).
+- The connection was slow and closed unexpectedly.
 
 I will keek the package name the same `recfile`. This way you only need
 to change the "import" statement to use this fork.
