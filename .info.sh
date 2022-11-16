@@ -1,5 +1,6 @@
 ## -- AUTO --
 auto() {
-    auto-go-fork "$@"
+    AUTO_GO_UPDATE_LICENSE=n
+    auto-go-mit "$@"
 }
 ## -- AUTO --
